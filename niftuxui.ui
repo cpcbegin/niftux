@@ -270,10 +270,47 @@
     <property name="geometry">
      <rect>
       <x>69</x>
-      <y>79</y>
+      <y>75</y>
       <width>441</width>
       <height>81</height>
      </rect>
+    </property>
+    <property name="palette">
+     <palette>
+      <active>
+       <colorrole role="Button">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>134</red>
+          <green>111</green>
+          <blue>87</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="Button">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>134</red>
+          <green>111</green>
+          <blue>87</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="Button">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>134</red>
+          <green>111</green>
+          <blue>87</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
     </property>
     <property name="font">
      <font>
@@ -308,6 +345,41 @@
      <bool>false</bool>
     </property>
    </widget>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>70</y>
+      <width>461</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="backgroundBrush">
+     <brush brushstyle="NoBrush">
+      <color alpha="255">
+       <red>180</red>
+       <green>150</green>
+       <blue>192</blue>
+      </color>
+     </brush>
+    </property>
+   </widget>
+   <zorder>graphicsView</zorder>
+   <zorder>button1</zorder>
+   <zorder>button2</zorder>
+   <zorder>button4</zorder>
+   <zorder>button3</zorder>
+   <zorder>button7</zorder>
+   <zorder>button8</zorder>
+   <zorder>button6</zorder>
+   <zorder>button5</zorder>
+   <zorder>button9</zorder>
+   <zorder>button0</zorder>
+   <zorder>buttonPaste</zorder>
+   <zorder>buttonCopy</zorder>
+   <zorder>buttonBackdel</zorder>
+   <zorder>buttonDel</zorder>
+   <zorder>labelNIF</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -331,17 +403,20 @@
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionCopiar">
    <property name="text">
+    <string>&amp;Copiar</string>
+   </property>
+   <property name="toolTip">
     <string>Copiar</string>
    </property>
   </action>
   <action name="actionPegar">
    <property name="text">
-    <string>Pegar</string>
+    <string>&amp;Pegar</string>
    </property>
   </action>
   <action name="actionSalir">
    <property name="text">
-    <string>Salir</string>
+    <string>&amp;Salir</string>
    </property>
   </action>
  </widget>

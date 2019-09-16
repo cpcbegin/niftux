@@ -54,12 +54,12 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def adddigit(self, digito):
         dni = int(re.sub("\D", "", self.ui.labelNIF.text()))
-        if dni < 100000000:
+        if dni < 10000000:
             dni = dni * 10 + int(digito)
         self.addletter(dni)
 
     def adddigit0(self):
-        print(self.adddigit(1))
+        print(self.adddigit(0))
 
     def adddigit1(self):
         print(self.adddigit(1))
