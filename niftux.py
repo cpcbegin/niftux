@@ -26,6 +26,20 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.actionPegar.triggered.connect(self.pastenif)
         self.ui.actionSalir.triggered.connect(self.exitapp)
 
+    def keyPressEvent(self, e):
+        if e.key()  == QtCore.Qt.Key_Escape :
+            self.exitapp()
+        elif e.key()  == QtCore.Qt.Key_Backspace :
+            self.deletedigit()
+        elif e.key()  == QtCore.Qt.Key_Delete :
+            self.deleteall()
+        elif e.key()  == QtCore.Qt.Key_Copy :
+            self.copynif()
+        elif e.key()  == QtCore.Qt.Key_Paste :
+            self.pastenif()
+        elif e.key() >= QtCore.Qt.Key_0 and e.key() <= QtCore.Qt.Key_9:
+            self.adddigit(e.key()-QtCore.Qt.Key_0)
+
     def addletter(self, dni):
         letra = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N",\
                   "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"]
@@ -41,6 +55,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.addletter(dni)
 
     def exitapp(self):
+        print(self.ui.labelNIF.text())
         sys.exit(0)
 
     def deleteall(self):
@@ -48,7 +63,6 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def deletedigit(self):
         dni = int(re.sub("\D", "", self.ui.labelNIF.text()))
-        print(dni)
         dni = math.floor(dni / 10)
         self.addletter(dni)
 
@@ -94,3 +108,4 @@ if __name__ == "__main__":
     window = MainWindow()
     window.show()
     app.exec_()
+    print(window.ui.labelNIF.text())

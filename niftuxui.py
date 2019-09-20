@@ -205,7 +205,7 @@ class Ui_MainWindow(object):
         self.buttonBackdel.setText(_translate("MainWindow", "◄"))
         self.buttonDel.setText(_translate("MainWindow", "🗑"))
         self.labelNIF.setText(_translate("MainWindow", "00000000-T"))
-        self.menuNIF.setTitle(_translate("MainWindow", "NIF"))
+        self.menuNIF.setTitle(_translate("MainWindow", "&NIF"))
         self.actionCopiar.setText(_translate("MainWindow", "&Copiar"))
         self.actionCopiar.setToolTip(_translate("MainWindow", "Copiar"))
         self.actionPegar.setText(_translate("MainWindow", "&Pegar"))
