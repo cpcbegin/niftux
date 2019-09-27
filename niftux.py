@@ -8,16 +8,11 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self.ui.button0.clicked.connect(self.adddigit0)
-        self.ui.button1.clicked.connect(self.adddigit1)
-        self.ui.button2.clicked.connect(self.adddigit2)
-        self.ui.button3.clicked.connect(self.adddigit3)
-        self.ui.button4.clicked.connect(self.adddigit4)
-        self.ui.button5.clicked.connect(self.adddigit5)
-        self.ui.button6.clicked.connect(self.adddigit6)
-        self.ui.button7.clicked.connect(self.adddigit7)
-        self.ui.button8.clicked.connect(self.adddigit8)
-        self.ui.button9.clicked.connect(self.adddigit9)
+        for digit in range(0, 10):
+            component_event = eval('self.ui.button' + str(digit) + '.clicked')
+            component_signal = eval('self.adddigit' + str(digit))
+            component_event.connect(component_signal)
+
         self.ui.buttonBackdel.clicked.connect(self.deletedigit)
         self.ui.buttonDel.clicked.connect(self.deleteall)
         self.ui.buttonCopy.clicked.connect(self.copynif)
@@ -27,17 +22,17 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.actionSalir.triggered.connect(self.exitapp)
 
     def keyPressEvent(self, e):
-        if e.key()  == QtCore.Qt.Key_Escape :
+        if e.key() == QtCore.Qt.Key_Escape :
             self.exitapp()
-        elif e.key()  == QtCore.Qt.Key_Backspace :
+        elif e.key() == QtCore.Qt.Key_Backspace :
             self.deletedigit()
-        elif e.key()  == QtCore.Qt.Key_Delete :
+        elif e.key() == QtCore.Qt.Key_Delete :
             self.deleteall()
-        elif e.key()  == QtCore.Qt.Key_Copy :
+        elif e.key() == QtCore.Qt.Key_Copy :
             self.copynif()
-        elif e.key()  == QtCore.Qt.Key_Paste :
+        elif e.key() == QtCore.Qt.Key_Paste :
             self.pastenif()
-        elif e.key() >= QtCore.Qt.Key_0 and e.key() <= QtCore.Qt.Key_9:
+        elif QtCore.Qt.Key_0 <= e.key() <= QtCore.Qt.Key_9:
             self.adddigit(e.key()-QtCore.Qt.Key_0)
 
     def addletter(self, dni):

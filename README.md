@@ -23,8 +23,7 @@ Ejecuta el siguiente comando desde la carpeta donde hayas descargado:
 
 ## Por hacer (@TO_DO)
 Es una versión preliminar por lo que puede tener muchos fallos y cosas por mejorar, en concreto:
-- Soporte teclado.
 - Mejorar aspecto.
 - Optimizar el código.
-- Ver si hay casos en los que haga cosas extrañas.
+- Ver si hay casos en los que pasen cosas extrañas.
 - Mejorar esta ayuda.
